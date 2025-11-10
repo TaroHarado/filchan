@@ -90,13 +90,13 @@
           </div>
           <div class="col code-panel">
             <div class="code-card" id="code">
-<pre><code>// main.secretchan
+<pre><code>// main.FilChan
 pragma circomchan 2.2.2;
 
-// (•̀ᴗ•́)و  scrt-chan wants to prove her hash!
+// (•̀ᴗ•́)و  filcoin-chan wants to prove her hash!
 include "circomchanlib/poseidon.circomchan";
 
-template SecretChan() {
+template FilChan() {
     // Private inputs: Poseidon hash preimage
     signal input in[6];
 
@@ -119,7 +119,7 @@ template SecretChan() {
 }
 
 // Main component with public input
-component main { public [ in ] } = SecretChan();</code></pre>
+component main { public [ in ] } = FilChan();</code></pre>
               <div class="code-cta">
                 <button class="button run-button" data-action="run">Run in Repl‑Chan</button>
               </div>
