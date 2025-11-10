@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>filchan.fun — The Open‑Source Privacy Platform</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="filchan.fun — Open‑source privacy platform built around FileCoin. Private computation, protected ownership, and secure interaction for people." />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top">
+        <img src="logo.png" alt="filchan.fun logo" class="brand-logo" />
+        <span class="brand-title">filchan<span class="dot">.fun</span></span>
+      </a>
+
+      <nav class="nav">
+        <a href="#problem">Problem</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#code">Code</a>
+        <a href="https://x.com/filchan_fun">Twitter</a>
+        <a href="https://github.com/buildor-sol/filchan-main" class="button button-outline">GitHub</a>
+      </nav>
+
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="ascii-bg" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <h1 class="hero-title">
+          filchan<span class="dot">.fun</span>
+        </h1>
+        <p class="hero-subtitle">The Open‑Source <em>Privacy</em> Platform for <strong>FileCoin</strong>.</p>
+        <div class="cta">
+          <a href="#solutions" class="button">Explore</a>
+          <a href="#code" class="button button-outline">View Code</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section id="problem" class="section section-alt">
+      <div class="container narrow">
+        <span class="eyebrow">The Problem</span>
+        <h2 class="section-title">The internet is over‑exposed. <em>We’re fixing it.</em></h2>
+        <p class="lead">
+          Every click is tracked. Personal data flows through unseen markets.
+          Public blockchains broadcast financial activity to anyone watching.
+          <strong>Privacy has vanished.</strong>
+        </p>
+        <p>
+          filchan.fun turns advanced cryptography into simple tools for private computation,
+          protected ownership, and secure interaction — powered by <strong>FileCoin</strong>.
+          We build infrastructure for a truly private internet.
+        </p>
+      </div>
+    </section>
+
+    <!-- Solutions -->
+    <section id="solutions" class="section">
+      <div class="container">
+        <span class="eyebrow">Solutions</span>
+        <h2 class="section-title">Powered by zero‑knowledge and Secret contracts</h2>
+
+        <div class="columns">
+          <div class="col">
+            <h3>Circuits you can reuse</h3>
+            <p>
+              We provide production‑ready circuits and clean cryptographic building blocks.
+              Developers can plug them into apps across major proving systems with no extra work.
+            </p>
+            <ul class="bullets">
+              <li>Bitwise ops as first‑class citizens in circuits.</li>
+              <li>Fast proving on everyday CPUs — including mobile.</li>
+              <li>Composable: use the same circuit across projects.</li>
+            </ul>
+            <a id="github" href="#" class="button button-outline">GitHub</a>
+          </div>
+          <div class="col code-panel">
+            <div class="code-card" id="code">
+<pre><code>// main.secretchan
+pragma circomchan 2.2.2;
+
+// (•̀ᴗ•́)و  scrt-chan wants to prove her hash!
+include "circomchanlib/poseidon.circomchan";
+
+template SecretChan() {
+    // Private inputs: Poseidon hash preimage
+    signal input in[6];
+
+    // Output: the poseidon hash of the input
+    signal output hash;
+
+    // Poseidon hash component for 6 inputs
+    component poseidon = Poseidon(6);
+
+    // Feed all the ASCII bytes into poseidon!
+    poseidon.inputs[0] &lt;== in[0];
+    poseidon.inputs[1] &lt;== in[1];
+    poseidon.inputs[2] &lt;== in[2];
+    poseidon.inputs[3] &lt;== in[3];
+    poseidon.inputs[4] &lt;== in[4];
+    poseidon.inputs[5] &lt;== in[5];
+
+    // Output the hash
+    hash &lt;== poseidon.out;
+}
+
+// Main component with public input
+component main { public [ in ] } = SecretChan();</code></pre>
+              <div class="code-cta">
+                <button class="button run-button" data-action="run">Run in Repl‑Chan</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community / CTA -->
+    <section id="community" class="section section-alt">
+      <div class="container community-inner">
+        <div>
+          <h2 class="section-title">Join the community</h2>
+          <p class="lead">Follow updates, contribute code, and help shape privacy for everyone.</p>
+          <div class="links">
+            <a href="https://github.com/buildor-sol/filchan-main" class="link">GitHub</a>
+            <a href="https://x.com/filchan_fun" class="link">X (Twitter)</a>
+          </div>
+        </div>
+        <img src="banner.png" class="footer-banner" alt="filchan.fun banner" />
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="brand-inline">
+        <img src="logo.png" alt="filchan.fun logo small" />
+        <span>filchan.fun</span>
+      </div>
+      <p>Built for the <strong>FileCoin</strong>. © <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
